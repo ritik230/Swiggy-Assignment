@@ -2,6 +2,17 @@ package com.swiggy.assignment;
 
 import java.util.Random;
 
+
+
+public class Main {
+	public static void main(String[] args) {
+		Player playerA = new Player(50, 5, 10);
+		Player playerB = new Player(100, 10, 5);
+
+		MagicalArena arena = new MagicalArena(playerA, playerB);
+		arena.fight();
+	}
+}
 class Player {
 	int health;
 	int strength;
@@ -62,6 +73,7 @@ class MagicalArena {
 			}
 
 			// Swap roles for the next round
+			
 			Player temp = attacker;
 			attacker = defender;
 			defender = temp;
@@ -72,15 +84,5 @@ class MagicalArena {
 		} else {
 			System.out.println("Player B wins!");
 		}
-	}
-}
-
-public class Main {
-	public static void main(String[] args) {
-		Player playerA = new Player(50, 5, 10);
-		Player playerB = new Player(100, 10, 5);
-
-		MagicalArena arena = new MagicalArena(playerA, playerB);
-		arena.fight();
 	}
 }
